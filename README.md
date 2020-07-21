@@ -1,4 +1,4 @@
-# Custom ZSH Experience on macOS
+# Custom ZSH Experience on macOS using Oh My ZSH
 
 ## Install Homebrew
 ### Requirements

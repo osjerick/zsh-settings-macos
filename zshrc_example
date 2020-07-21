@@ -116,8 +116,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # POWERLEVEL9K Settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda virtualenv)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda virtualenv user dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
 POWERLEVEL9K_STATUS_CROSS="true"
 POWERLEVEL9K_STATUS_OK="false"
 POWERLEVEL9K_USER_DEFAULT_FOREGROUND="110"
