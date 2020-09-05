@@ -1,4 +1,4 @@
-# Custom ZSH Experience on macOS using Oh My ZSH
+# iTerm + ZSH + Oh My ZSH + Powerline10k
 
 ## Install Homebrew
 ### Requirements
@@ -95,21 +95,23 @@ It is fully customizable, check the [docs](https://github.com/zsh-users/zsh-appl
 >In order to enable a theme, set `ZSH_THEME` to the name of the theme in your `~/.zshrc`, before sourcing Oh My Zsh; for example: `ZSH_THEME=robbyrussell`.
 >If you do not want any theme enabled, just set `ZSH_THEME` to blank: `ZSH_THEME=""`
 
-#### [POWERLEVEL9K](https://github.com/Powerlevel9k/powerlevel9k)
->Powerlevel9k is a theme for ZSH which uses Powerline Fonts. It can be used with vanilla ZSH or ZSH frameworks such as Oh-My-Zsh, Prezto, Antigen, and many others.
+#### [POWERLEVEL10K](https://github.com/romkatv/powerlevel10k)
+>Powerlevel10k is a theme for Zsh. It emphasizes speed, flexibility and out-of-the-box experience.
 
 ##### Installation
 ```bash
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
 
 Select it in your  `~/.zshrc`:
 ```bash
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 ```
 
 ##### [Powerline Fonts](https://github.com/Powerlevel9k/powerlevel9k/wiki/Install-Instructions#step-2-install-a-powerline-font)
->In order for the theme to render properly, you need a font that has the "Powerline" glyphs. These are used at the start & end of the segments to produce the "powerline" appearance. Additionally, if your font includes any of the expanded glyph set, Powerlevel9k is capable of making use of those to produce a very nice prompt.
+>Powerlevel10k doesn't require custom fonts but can take advantage of them if they are available. It works well with Nerd Fonts, Source Code Pro, Font Awesome, Powerline, and even the default system fonts. The full choice of style options is available only when using Nerd Fonts.
+
+Recommended Fonts: [Meslo Nerd Font patched for Powerlevel10k](https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k).
 
 ###### Nerd Fonts
 >The Nerd-Fonts project is an effort to create fonts truly tricked out with as many glyphs as possible. After installing `nerd-fonts` and configuring your terminal emulator to use one, configure Powerlevel9k by putting the following in your `~/.zshrc` before you specify the powerlevel9k theme:
@@ -120,30 +122,16 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 Example: [SF Mono Nerd Font](./SF-Mono-Regular-Nerd-Font-Complete.otf).
 
 ##### Settings
-These settings generate a pretty usefull layout using Powerlevel9k:
-```bash
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(user dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status anaconda virtualenv)
-POWERLEVEL9K_STATUS_CROSS="true"
-POWERLEVEL9K_STATUS_OK="false"
-POWERLEVEL9K_USER_DEFAULT_FOREGROUND="110"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_DELIMITER=".."
-POWERLEVEL9K_ANACONDA_FOREGROUND="071"
-POWERLEVEL9K_ANACONDA_BACKGROUND="008"
-POWERLEVEL9K_PYTHON_ICON=""
-POWERLEVEL9K_HOME_ICON=""
-POWERLEVEL9K_HOME_SUB_ICON=""
-POWERLEVEL9K_FOLDER_ICON=""
-POWERLEVEL9K_ETC_ICON=""
-POWERLEVEL9K_VCS_GIT_ICON=""
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
-POWERLEVEL9K_VCS_GIT_GITLAB_ICON=""
-POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=""
-ZSH_HIGHLIGHT_STYLES[path]="none"
-```
+Powerlevel9k settings are interpreted almost completely by Powerlevel10k, but the built-in wizard could be used to generate a more complete configuration file; this file will be `~/.p10k.zsh`, and could be used to further customize your experience.
 
-Example `~/.zshrc` [file](./zshrc_example.sh).
+ZSH settings in `~/.zshrc` are still needed.
+
+- Example [`~/.zshrc`](./zshrc_example.zsh) file.
+- Example [`~/p10k.zsh`](./p10k_example.zsh) file.
+
+This example files configure this appearance, with the FirefoxDev color scheme:
+
+![Example Shell](example.png)
 
 ## iTerm2 Settings
 iTerm2 is fully customizable.
@@ -154,10 +142,19 @@ Download and install a color scheme from [iTerm2 Color Schemes](https://github.c
 Sample color scheme: [FirefoxDev.itermcolors](./FirefoxDev.itermcolors)
 
 ### Fonts
-iTerm2 allows us to set two sets of fonts for ASCII characters and for non-ASCII characters. Go to `Preferences -> Profiles -> Text -> Font` and select, for example:
+- [MesloLGS NF Regular.ttf](./MesloLGS%20NF%20Regular.ttf)
+- [MesloLGS NF Bold.ttf](./MesloLGS%20NF%20Bold.ttf)
+- [MesloLGS NF Italic.ttf](./MesloLGS%20NF%20Italic.ttf)
+- [MesloLGS NF Bold Italic.ttf](./MesloLGS%20NF%20Bold%20Italic.ttf)
+- [SF-Mono-Regular-Nerd-Font-Complete.otf](./SF-Mono-Regular-Nerd-Font-Complete.otf)
+- [SF-Mono.dmg](./SF-Mono.dmg) [Official Link](https://developer.apple.com/fonts/). Use this more complete font set for ASCII characters to provide better control of font weight.
 
-- `SF Mono` Semibold `12 pt` as main **Font**. [Download Font](./SF-Mono.dmg) [Official Link](https://developer.apple.com/fonts/)
-- `SFMono Nerd Font` Regular `12 pt` as **Non-ASCII Font**. [Download Font](./SF-Mono-Regular-Nerd-Font-Complete.otf)
+These fonts work better at 11pt or 13 pt.
+
+iTerm2 allows us to select two sets of fonts, for ASCII characters and for non-ASCII characters. Go to `Preferences -> Profiles -> Text -> Font` and select, for example:
+
+- `SF Mono` Semibold `11 pt` as main **Font**.
+- `SFMono Nerd Font` Regular `11 pt` as **Non-ASCII Font**.
 
 ### Keys
 

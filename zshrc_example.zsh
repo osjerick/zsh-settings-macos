@@ -1,16 +1,14 @@
-POWERLEVEL9K_MODE="nerdfont-complete"
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/[[USERNAME]]/.oh-my-zsh"
+export ZSH="/Users/jerick/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -19,7 +17,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
+CASE_SENSITIVE="true"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
@@ -80,9 +78,9 @@ brew
 osx
 cargo
 rust
-zsh-autosuggestions # needs to be installed
-zsh-completions # needs to be installed
-zsh-syntax-highlighting # needs to be installed
+zsh-autosuggestions
+zsh-completions
+zsh-syntax-highlighting
 docker
 docker-compose
 )
@@ -115,29 +113,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# POWERLEVEL9K Settings
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(anaconda virtualenv user dir_writable dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status)
-POWERLEVEL9K_STATUS_CROSS="true"
-POWERLEVEL9K_STATUS_OK="false"
-POWERLEVEL9K_USER_DEFAULT_FOREGROUND="110"
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_SHORTEN_DELIMITER=".."
-POWERLEVEL9K_ANACONDA_FOREGROUND="071"
-POWERLEVEL9K_ANACONDA_BACKGROUND="008"
-POWERLEVEL9K_PYTHON_ICON=""
-POWERLEVEL9K_HOME_ICON=""
-POWERLEVEL9K_HOME_SUB_ICON=""
-POWERLEVEL9K_FOLDER_ICON=""
-POWERLEVEL9K_ETC_ICON=""
-POWERLEVEL9K_VCS_GIT_ICON=""
-POWERLEVEL9K_VCS_GIT_GITHUB_ICON=""
-POWERLEVEL9K_VCS_GIT_GITLAB_ICON=""
-POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON=""
+ZLE_RPROMPT_INDENT=0
 ZSH_HIGHLIGHT_STYLES[path]="none"
-#ZSH_HIGHLIGHT_STYLES[path_prefix]="none"
 
 # MY SETTINGS
 
-# Your settings can be here
-# Grab them from the backup
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
