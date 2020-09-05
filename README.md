@@ -1,4 +1,4 @@
-# iTerm + ZSH + Oh My ZSH + Powerline10k
+# macOS terminal: iTerm + ZSH + Oh My ZSH + Powerline10k
 
 ## Install Homebrew
 ### Requirements
