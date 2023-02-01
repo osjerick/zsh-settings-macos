@@ -38,15 +38,18 @@ These require Git for installation.
   
   To ensure you have the best experience, install some custom fonts: https://github.com/romkatv/powerlevel10k#meslo-nerd-font-patched-for-powerlevel10k.
 
-
 ## iTerm2 Settings
 Some useful settings.
 
 ### Color Scheme
 - `Settings -> Profiles -> Colors -> Color Presets` and select a color scheme.
 - You can import new presets. Presets repository: https://iterm2colorschemes.com/.
-- Terminal in the image above uses `FirefoxDev` with some tweaks in Powerlevel10k settings.
+- The terminal in the image above uses `FirefoxDev` with some tweaks in Powerlevel10k settings (see example settings).
 
 ### Natural Text Editing
 
 - `Settings -> Profiles -> Keys -> Key Mappings -> Presets` and select **Natural Text Editing**.
+
+## Example Settings
+- Oh My Zsh: [zshrc_example.zsh](zshrc_example.zsh). Several plugins are enabled, and OMZ is setup to be updated automatically.
+- Powerlevel10k: [p10k_example.zsh](p10k_example.zsh). Several changes are applied to remove some icons, change the order of some elements, and make the theme more adapted to the `FirefoxDev` color scheme for iTerm2.
